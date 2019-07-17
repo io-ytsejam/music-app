@@ -1,7 +1,14 @@
-import { GET_TITLE, NEW_TITLE } from "./types";
+import { GET_TITLE, SET_TITLE } from "./types";
 
-export function getTitle() {
-  return (dispatch) => {
+export const getTitle = (title) => {
+  return  {
+    type: GET_TITLE,
+    payload: title
+  }
+};
 
+export const setTitle = () => {
+  return {
+    type: NEW_TITLE
   }
 }
