@@ -12,7 +12,7 @@ class MainPage extends Component {
             keys: 0
         };
         this.baconIpsum = this.baconIpsum.bind(this);
-        MainPage.getPics = MainPage.getPics.bind(this);
+        this.getPics = this.getPics.bind(this);
         this.blurCover = this.blurCover.bind(this);
     }
 
@@ -30,6 +30,7 @@ class MainPage extends Component {
           .forEach(el => { el.style.opacity = 1 });
         document.querySelectorAll(".welcome h1, h2")
           .forEach(el => { el.style.transform = "translateY(0)" });
+        const images = document.querySelectorAll("div.image-wrapper img");
     }
 
     baconIpsum() {
@@ -39,12 +40,16 @@ class MainPage extends Component {
           .catch(err => { throw err})
     }
 
-    static getPics (start, end) {
+    getPics (start, end) {
         let imgs = [];
         let x = 0;
         for (let i = start; i <= end; i++) {
             const rand = Math.floor((Math.random()*100)+start)%(end - start);
-            imgs[i-start] = <img src={`images/albumpics/med/${rand}.jpg`} key={start+76+i} alt={"front-page-presentation"} />;
+            imgs[i-start] = (
+              <div className={"image-wrapper"}>
+                <img src={`images/albumpics/med/${rand}.jpg`} key={start+76+i} alt={"front-page-presentation"} />
+              </div>
+            );
         }
         return imgs;
     }
@@ -71,11 +76,11 @@ class MainPage extends Component {
                     </div>
                 </div>
                 <div className={"container"}>
-                    <Row pics={MainPage.getPics(0, 15)}/>
-                    <Row pics={MainPage.getPics(16, 30)}/>
-                    <Row pics={MainPage.getPics(31, 45)}/>
-                    <Row pics={MainPage.getPics(46, 60)}/>
-                    <Row pics={MainPage.getPics(61, 75)}/>
+                    <Row pics={this.getPics(0, 15)}/>
+                    <Row pics={this.getPics(16, 30)}/>
+                    <Row pics={this.getPics(31, 45)}/>
+                    <Row pics={this.getPics(46, 60)}/>
+                    <Row pics={this.getPics(61, 75)}/>
                 </div>
             </div>
         );

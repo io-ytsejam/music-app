@@ -15,10 +15,33 @@ class NavBar extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.searchHandleFocusBlur = this.searchHandleFocusBlur.bind(this);
+    this.animatePics = this.animatePics.bind(this);
   }
 
   onChange(e) {
     this.setState({searchInput: e.target.value})
+  }
+
+  animatePics() {
+    const images = document.querySelectorAll("div.image-wrapper img");
+    images.forEach(image => {
+      /*image.style.margin = "20px";
+      image.style.width = "180px";
+      image.style.height = "180px";*/
+      image.style.transition = "none";
+      setTimeout(() => {
+        setTimeout(() => {
+          image.style.margin = "20px";
+          image.style.width = "180px";
+          image.style.height = "180px";
+          setTimeout(() => {
+            image.style.transition = "all 0.7s ease";
+            image.style.width = "200px";
+            image.style.height = "200px";
+          }, 100);
+        }, Math.floor(Math.random()*1000));
+      }, 0)
+    })
   }
 
   searchHandleFocusBlur(e) {
@@ -60,7 +83,7 @@ class NavBar extends Component {
               <div className={"nav-3-section"}>
                 <div className={"nav-buttons"}>
                   <div className={"nav-button"}><p><Link to={"/"}>Get started</Link></p></div>
-                  <div className={"nav-button"}><p>Join in</p></div>
+                  <div onClick={this.animatePics} className={"nav-button"}><p>Join in</p></div>
                   <div className={"nav-button"}><p>Find out more</p></div>
                   <div className={"nav-button"}><p><Link to={"/about/"}>About</Link></p></div>
                   <div className={"logged-user"}><p>Loren_Insum</p></div>
