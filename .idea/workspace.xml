@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d993f9c-954d-4cf5-b771-5cecdfd5c913" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/marci.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/marci.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
@@ -57,8 +56,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/MainPage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="241">
-                  <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="57" selection-end-column="15" />
+                <state relative-caret-position="136">
+                  <caret line="71" column="141" selection-start-line="71" selection-start-column="141" selection-end-line="71" selection-end-column="141" />
                 </state>
               </provider>
             </entry>
@@ -78,8 +77,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/NavBar.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+                <state relative-caret-position="459">
+                  <caret line="33" column="3" selection-start-line="21" selection-start-column="2" selection-end-line="33" selection-end-column="3" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -121,8 +120,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/stylesheets/MainPage.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="161" column="33" selection-start-line="161" selection-start-column="33" selection-end-line="161" selection-end-column="33" />
+                <state relative-caret-position="109">
+                  <caret line="85" column="34" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
@@ -186,10 +185,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>border-top: 1px darkred solid</find>
-      <find>button {</find>
-      <find>log</find>
-      <find>fix</find>
       <find>nav</find>
       <find>tit</find>
       <find>inpu</find>
@@ -207,7 +202,6 @@
       <find>scr</find>
       <find>main</find>
       <find>.con</find>
-      <find>card</find>
       <find>prese</find>
       <find>lighterDark</find>
       <find>welc</find>
@@ -216,11 +210,19 @@
       <find>i wa</find>
       <find>solid</find>
       <find>playlis</find>
+      <find>console.</find>
+      <find>card</find>
+      <find>svg[0]</find>
+      <find>s.</find>
+      <find>playlist[1]</find>
     </findStrings>
     <replaceStrings>
       <replace>$primaryTextAndAccent</replace>
       <replace>className=</replace>
       <replace>alt=&quot;&quot;/</replace>
+      <replace>s</replace>
+      <replace>playlist[1].</replace>
+      <replace>playlist[2]</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -272,8 +274,8 @@
     </layout>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="493" />
-    <option name="width" value="1434" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -402,15 +404,16 @@
       <workItem from="1564094776250" duration="276000" />
       <workItem from="1564417637939" duration="464000" />
       <workItem from="1564438095899" duration="10274000" />
-      <workItem from="1564495289389" duration="2739000" />
+      <workItem from="1564495289389" duration="17233000" />
+      <workItem from="1564521742353" duration="2444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118710000" />
+    <option name="totallyTimeSpent" value="135648000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="493" y="0" width="1434" height="1047" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989059" weight="0.3390558" />
@@ -595,6 +598,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/NavBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="33" column="3" selection-start-line="21" selection-start-column="2" selection-end-line="33" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/About.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -653,25 +666,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stylesheets/MainPage.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="161" column="33" selection-start-line="161" selection-start-column="33" selection-end-line="161" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/NavBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="109">
+          <caret line="85" column="34" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MainPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="57" selection-end-column="15" />
+        <state relative-caret-position="136">
+          <caret line="71" column="141" selection-start-line="71" selection-start-column="141" selection-end-line="71" selection-end-column="141" />
         </state>
       </provider>
     </entry>

@@ -84,7 +84,6 @@
   div.presentation {
 
     div.presentation-box-1-title {
-
     }
 
     h3 {
@@ -112,6 +111,11 @@
 
         p {
           text-align: center;
+        }
+
+        svg {
+          transition: 1s all ease;
+          transform: translateX(-50px);
         }
       }
 
@@ -158,14 +162,15 @@
         div.playlist-single-position {
           //border: 1px $accentOrange solid;
           //height: 50px;
-          max-width: 450px;
+          // max-width: 450px;
           width: calc(100% - 50px);
+          min-width: 150px;
           padding: 20px;
           display: flex;
           transition: 1s transform ease;
 
           div.line-artwork {
-            box-shadow: 2px 2px 2px 0 white;
+            box-shadow: 0 0 8px 3px black;
             margin-right: 20px;
             background: #bebebe;
             flex-shrink: 0;
@@ -174,13 +179,13 @@
             border-radius: 40px;
           }
           div.line {
-            box-shadow: 2px 2px 2px 0 white;
+            box-shadow: 0 0 8px 3px black;
             flex-grow: 1;
             height: 30px;
             transition: 1s background ease;
             background: #bebebe;
             background: linear-gradient(135deg, #a2a2a2 0%, wheat 41%,#bebebe 100%);
-            border-radius: 8px;
+            border-radius: 30px;
           }
         }
 

@@ -21,6 +21,7 @@ class MainPage extends Component {
         this.baconIpsum = this.baconIpsum.bind(this);
         this.getPics = this.getPics.bind(this);
         this.blurCover = this.blurCover.bind(this);
+        this.gradientAnimation = this.gradientAnimation.bind(this);
     }
 
     blurCover() {
@@ -37,41 +38,75 @@ class MainPage extends Component {
           .forEach(el => { el.style.opacity = 1 });
         document.querySelectorAll(".welcome h1, h2")
           .forEach(el => { el.style.transform = "translateY(0)" });
-        const images = document.querySelectorAll("div.image-wrapper img");
 
-        const container = document.querySelector("div.container");
-        const welcome = document.querySelector("div.welcome");
+        const title = document.querySelector("div.presentation-box-1-title h3");
+        const svg = document.querySelectorAll("div.presentation-card svg");
+        const playlist = document.querySelectorAll("div.playlist-single-position");
 
-        container.style.filter = "blur(0.1px)";
+        window.addEventListener("scroll", () => {
 
-        const lines = document.querySelectorAll("div.line");
-
-        let i = 0;
-
-        const color = window.getComputedStyle(lines[0]).background.split(',')[2].substr(1, 7);
-
-        setInterval(() => {
-            lines.forEach(line => {
-                line.style.background = `linear-gradient(135deg, #a2a2a2 0%, ${"white"} ${i++%300}%,#bebebe 100%)`;
-                if (!(i%600)) i = 20;
+            /*Animate huge icons*/
+            svg.forEach(s => {
+                if (window.innerHeight - s.getBoundingClientRect().top - parseInt(window.getComputedStyle(s).height) >= 0) {
+                    s.style.opacity = 1;
+                    s.style.transform = "translateX(0)";
+                } else {
+                    s.style.opacity = 0;
+                    s.style.transform = "translateX(-50px)";
+                }
             });
-        }, 30);
+
+            if (window.innerHeight - playlist[1].getBoundingClientRect().top - (parseInt(window.getComputedStyle(playlist[1]).height) + 40) >= 0) {
+                playlist[1].style.transform = "translate3d(-50px, -70px, 0)";
+                playlist[0].style.transform = "translate3d(50px, 70px, 0)";
+            } else {
+                playlist[1].style.transform = "none";
+                playlist[0].style.transform = "none";
+            }
+
+            if (window.innerHeight - playlist[3].getBoundingClientRect().top - (parseInt(window.getComputedStyle(playlist[3]).height) + 40) >= 0) {
+                playlist[3].style.transform = "translateY(-210px)";
+                playlist[1].style.transform = "none";
+                playlist[2].style.transform = "translate3d(-50px, 70px, 0)";
+                playlist[0].style.transform = "translate3d(50px, 140px, 0)";
+                if (window.innerHeight - playlist[4].getBoundingClientRect().top - (parseInt(window.getComputedStyle(playlist[4]).height) + 60) >= 0) {
+                    playlist[2].style.transform = "translate3d(-80px, 140px, 0)";
+                    playlist[4].style.transform = "translate3d(30px, -70px, 0)";
+                } else {
+                    playlist[2].style.transform = "translate3d(-50px, 70px, 0)";
+                    playlist[4].style.transform = "none";
+                }
+            } else {
+                /*HMM*/
+                playlist[2].style.transform = "none";
+                playlist[3].style.transform = "none";
+            }
+
+
+
+
+        });
+
+        // this.gradientAnimation(document.querySelectorAll("div.line"), "wheat");
 
         console.info("Hmm");
 
-        window.addEventListener("scroll", e => {
-            console.info(window.scrollY);
-            if (window.scrollY <= 100) container.style.filter = "blur(0.1px)";
-            else if (window.scrollY <= 200) container.style.filter = "blur(2px)";
-            else if (window.scrollY <= 300) container.style.filter = "blur(4px)";
-            else if (window.scrollY <= 400) container.style.filter = "blur(7px)";
-            else if (window.scrollY <= 500) container.style.filter = "blur(10px)";
-            else if (window.scrollY <= 600) container.style.filter = "blur(15px)";
-            else if (window.scrollY <= 700) container.style.filter = "blur(20px)";
-            else if (window.scrollY <= 800) container.style.filter = "blur(15px)";
-            else if (window.scrollY <= 900) container.style.filter = "blur(20px)";
-            else /*if (window.scrollY <= 1000)*/ container.style.filter = "blur(21px)";
-        });
+        this.blurOnScroll(document.querySelector("div.container"));
+        this.reorderPlaylist = this.reorderPlaylist.bind(this);
+    }
+
+    reorderPlaylist() {
+        const pos = document.querySelectorAll("div.playlist-single-position");
+
+        pos[0].style.transform = "translate3d(0px, 210px, 0)";
+        pos[4].style.transform = "translate3d(80px, -210px, 0)";
+
+        setTimeout(() => {
+            pos[1].style.transform = "translate3d(-50px, 210px, 0)";
+            setTimeout(() => {
+                pos[3].style.transform = "translate3d(0px, -210px, 0)";
+            }, 500);
+        }, 700)
     }
 
     baconIpsum(paragraphs) {
@@ -81,6 +116,32 @@ class MainPage extends Component {
           .then(data => { lorem = data } )
           .then( () => { return lorem } )
           .catch(err => { throw err});
+    }
+
+    blurOnScroll(blured) {
+        window.addEventListener("scroll", e => {
+            if (window.scrollY <= 100) blured.style.filter = "blur(0.1px)";
+            else if (window.scrollY <= 200) blured.style.filter = "blur(2px)";
+            else if (window.scrollY <= 300) blured.style.filter = "blur(4px)";
+            else if (window.scrollY <= 400) blured.style.filter = "blur(7px)";
+            else if (window.scrollY <= 500) blured.style.filter = "blur(10px)";
+            else if (window.scrollY <= 600) blured.style.filter = "blur(15px)";
+            else if (window.scrollY <= 700) blured.style.filter = "blur(20px)";
+            else if (window.scrollY <= 800) blured.style.filter = "blur(15px)";
+            else if (window.scrollY <= 900) blured.style.filter = "blur(20px)";
+            else /*if (window.scrollY <= 1000)*/ blured.style.filter = "blur(21px)";
+        });
+    }
+
+    gradientAnimation(lines, accentColor) {
+        let i = 0;
+
+        setInterval(() => {
+            lines.forEach(line => {
+                line.style.background = `linear-gradient(135deg, #a2a2a2 0%, ${accentColor} ${i++%300}%,#bebebe 100%)`;
+                if (!(i%600)) i = 20;
+            });
+        }, 30);
     }
 
     getPics (start, end) {
@@ -170,19 +231,29 @@ class MainPage extends Component {
                                 paddingRight: "50px"
                             }}>
                                 <div className="playlist-single-position">
-                                    <div className="line-artwork"></div><div className="line"></div>
+                                    <div className="line-artwork" style={{
+                                        background: "lightsalmon"
+                                    }}/><div className="line"/>
                                 </div>
                                 <div className="playlist-single-position">
-                                    <div className="line-artwork"></div><div className="line"></div>
+                                    <div className="line-artwork" style={{
+                                        background: "crimson"
+                                    }}/><div className="line"/>
                                 </div>
                                 <div className="playlist-single-position">
-                                    <div className="line-artwork"></div><div className="line"></div>
+                                    <div className="line-artwork" style={{
+                                        background: "red"
+                                    }}/><div className="line"/>
                                 </div>
                                 <div className="playlist-single-position">
-                                    <div className="line-artwork"></div><div className="line"></div>
+                                    <div className="line-artwork" style={{
+                                        background: "firebrick"
+                                    }}/><div className="line"/>
                                 </div>
                                 <div className="playlist-single-position">
-                                    <div className="line-artwork"></div><div className="line"></div>
+                                    <div className="line-artwork" style={{
+                                        background: "darkred"
+                                    }}/><div className="line"/>
                                 </div>
                             </div>
 

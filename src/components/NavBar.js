@@ -20,11 +20,17 @@ class NavBar extends Component {
   }
 
   reorderPlaylist() {
-    const pos1 = document.querySelectorAll("div.playlist-single-position")[0];
-    const pos2 = document.querySelectorAll("div.playlist-single-position")[1];
+    const pos = document.querySelectorAll("div.playlist-single-position");
 
-    pos1.style.transform = "translateY(70px)";
-    pos2.style.transform = "translateY(-70px)";
+    pos[0].style.transform = "translate3d(0px, 210px, 0)";
+    pos[4].style.transform = "translate3d(80px, -210px, 0)";
+
+    setTimeout(() => {
+        pos[1].style.transform = "translate3d(-50px, 210px, 0)";
+        setTimeout(() => {
+            pos[3].style.transform = "translate3d(0px, -210px, 0)";
+        }, 500);
+    }, 700)
   }
 
   onChange(e) {
