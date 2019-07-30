@@ -16,6 +16,15 @@ class NavBar extends Component {
     this.onChange = this.onChange.bind(this);
     this.searchHandleFocusBlur = this.searchHandleFocusBlur.bind(this);
     this.animatePics = this.animatePics.bind(this);
+    this.reorderPlaylist = this.reorderPlaylist.bind(this);
+  }
+
+  reorderPlaylist() {
+    const pos1 = document.querySelectorAll("div.playlist-single-position")[0];
+    const pos2 = document.querySelectorAll("div.playlist-single-position")[1];
+
+    pos1.style.transform = "translateY(70px)";
+    pos2.style.transform = "translateY(-70px)";
   }
 
   onChange(e) {
@@ -84,7 +93,7 @@ class NavBar extends Component {
                 <div className={"nav-buttons"}>
                   <div className={"nav-button"}><p><Link to={"/"}>Get started</Link></p></div>
                   <div onClick={this.animatePics} className={"nav-button"}><p>Join in</p></div>
-                  <div className={"nav-button"}><p>Find out more</p></div>
+                  <div onClick={() => this.reorderPlaylist()} className={"nav-button"}><p>Find out more</p></div>
                   <div className={"nav-button"}><p><Link to={"/about/"}>About</Link></p></div>
                   <div className={"logged-user"}><p>Loren_Insum</p></div>
                 </div>

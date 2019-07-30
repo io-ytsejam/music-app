@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSlidersH} from "@fortawesome/free-solid-svg-icons/faSlidersH";
 import {faHeadphonesAlt} from "@fortawesome/free-solid-svg-icons/faHeadphonesAlt";
 import {faMusic} from "@fortawesome/free-solid-svg-icons/faMusic";
+import {faStream} from "@fortawesome/free-solid-svg-icons";
 
 class MainPage extends Component {
     constructor(props) {
@@ -15,6 +16,8 @@ class MainPage extends Component {
             params: 1,
             keys: 0
         };
+
+
         this.baconIpsum = this.baconIpsum.bind(this);
         this.getPics = this.getPics.bind(this);
         this.blurCover = this.blurCover.bind(this);
@@ -41,17 +44,20 @@ class MainPage extends Component {
 
         container.style.filter = "blur(0.1px)";
 
-        /*window.addEventListener("wheel", e => {
-            let blur;
-            if (e.deltaY > 0) {
-                if (window.scrollY < parseFloat(window.getComputedStyle(welcome).height))
-                    blur = parseFloat(window.getComputedStyle(container).filter.substr(5))+0.5;
-            } else
-                blur = parseFloat(window.getComputedStyle(container).filter.substr(5))-0.5;
+        const lines = document.querySelectorAll("div.line");
 
-            container.style.filter = `blur(${blur}px)`;
-            console.info(e.deltaY);
-        });*/
+        let i = 0;
+
+        const color = window.getComputedStyle(lines[0]).background.split(',')[2].substr(1, 7);
+
+        setInterval(() => {
+            lines.forEach(line => {
+                line.style.background = `linear-gradient(135deg, #a2a2a2 0%, ${"white"} ${i++%300}%,#bebebe 100%)`;
+                if (!(i%600)) i = 20;
+            });
+        }, 30);
+
+        console.info("Hmm");
 
         window.addEventListener("scroll", e => {
             console.info(window.scrollY);
@@ -64,7 +70,7 @@ class MainPage extends Component {
             else if (window.scrollY <= 700) container.style.filter = "blur(20px)";
             else if (window.scrollY <= 800) container.style.filter = "blur(15px)";
             else if (window.scrollY <= 900) container.style.filter = "blur(20px)";
-            else if (window.scrollY <= 1000) container.style.filter = "blur(21px)";
+            else /*if (window.scrollY <= 1000)*/ container.style.filter = "blur(21px)";
         });
     }
 
@@ -123,7 +129,7 @@ class MainPage extends Component {
                     <div className="presentation-box-1">
                         <div className="presentation-card">
                             <FontAwesomeIcon color={"#b33920"} icon={faSlidersH} size={"6x"}/>
-                            <p style={{ textAlign: "center" }}>
+                            <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu tortor massa. Duis ultrices laoreet libero, vel dapibus ante ornare vel. Integer egestas leo id ex rutrum laoreet. Quisque sed vulputate nulla. Sed vitae massa sollicitudin, iaculis metus ornare, accumsan nisi.
                             </p>
                         </div>
@@ -140,8 +146,48 @@ class MainPage extends Component {
                             </p>
                         </div>
                     </div>
+                        <div className="presentation-box-1-title">
+                            <h3>Duis venenatis mi nibh</h3>
+                        </div>
                     <div className="presentation-box-2">
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            padding: "20px",
+                            maxWidth: "1000px"
+                        }}>
+                            <h4>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eros lectus, sollicitudin vitae consequat eget, imperdiet id enim.
+                            </h4>
+                        <div className="playlist">
+                            <p style={{flexGrow: 2, flexBasis: "400px"}}>
+                                Maecenas facilisis ex ut dignissim bibendum. Proin gravida felis vel porttitor tempus. Sed dapibus ex metus, non scelerisque nisi rhoncus vel. Phasellus nibh quam, sodales laoreet finibus id, ullamcorper in lacus. Pellentesque dignissim sapien ante, nec placerat erat luctus et. Donec leo metus, imperdiet vel erat ac, maximus laoreet risus. Duis venenatis mi nibh. In ac tortor lacus. Curabitur eget accumsan massa, a tincidunt massa. Nullam tempor id ipsum quis blandit.
+                            </p>
+                            <div style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                flexGrow: 1,
+                                paddingRight: "50px"
+                            }}>
+                                <div className="playlist-single-position">
+                                    <div className="line-artwork"></div><div className="line"></div>
+                                </div>
+                                <div className="playlist-single-position">
+                                    <div className="line-artwork"></div><div className="line"></div>
+                                </div>
+                                <div className="playlist-single-position">
+                                    <div className="line-artwork"></div><div className="line"></div>
+                                </div>
+                                <div className="playlist-single-position">
+                                    <div className="line-artwork"></div><div className="line"></div>
+                                </div>
+                                <div className="playlist-single-position">
+                                    <div className="line-artwork"></div><div className="line"></div>
+                                </div>
+                            </div>
 
+                        </div>
+                        </div>
                     </div>
                 </div>
                 </div>

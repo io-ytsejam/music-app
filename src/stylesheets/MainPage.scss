@@ -1,6 +1,6 @@
 .mainpage-component {
   @import 'theme/variables';
-  height: 1500px;
+  height: 4000px;
   div.container {
     transition: filter 1s ease;
     position: fixed;
@@ -34,7 +34,7 @@
 
   div.image-wrapper {
     background-color: black;
-    border: 1px crimson solid;
+    //border: 1px crimson solid;
     display: flex;
     width: 200px;
     height: 200px;
@@ -94,6 +94,8 @@
     }
 
     div.presentation-box-1 {
+      border-bottom: 1px $accentOrange solid;
+      padding: 20px 0;
       background: $lighterDark;
       display: flex;
       flex-wrap: wrap;
@@ -107,6 +109,10 @@
         max-height: 300px;
         padding: 20px;
         // background-color: #b33920;
+
+        p {
+          text-align: center;
+        }
       }
 
       div.presentation-card:nth-of-type(1) {
@@ -124,9 +130,75 @@
 
     }
 
+    div.presentation-box-1-title {
+      border-bottom: 1px $accentOrange solid;
+    }
+
     div.presentation-box-2 {
-      height: 500px;
-      background-color: lightcoral;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      //flex-wrap: wrap;
+      //height: 500px;
+      background-color: $lighterDark;
+
+      h4 {
+        font-size: 1.6em;
+        font-weight: 100;
+      }
+
+      div.playlist {
+        //width: 500px;
+        //border: 1px crimson solid;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        align-items: center;
+
+
+        div.playlist-single-position {
+          //border: 1px $accentOrange solid;
+          //height: 50px;
+          max-width: 450px;
+          width: calc(100% - 50px);
+          padding: 20px;
+          display: flex;
+          transition: 1s transform ease;
+
+          div.line-artwork {
+            box-shadow: 2px 2px 2px 0 white;
+            margin-right: 20px;
+            background: #bebebe;
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 40px;
+          }
+          div.line {
+            box-shadow: 2px 2px 2px 0 white;
+            flex-grow: 1;
+            height: 30px;
+            transition: 1s background ease;
+            background: #bebebe;
+            background: linear-gradient(135deg, #a2a2a2 0%, wheat 41%,#bebebe 100%);
+            border-radius: 8px;
+          }
+        }
+
+        div.playlist-single-position:nth-of-type(2) {
+          margin-left: 50px;
+        }
+
+        div.playlist-single-position:nth-of-type(3) {
+          margin-left: 50px;
+        }
+
+        div.playlist-single-position:nth-of-type(5) {
+          margin-left: -30px;
+          opacity: 0.3;
+        }
+
+      }
+
     }
 
     p {
