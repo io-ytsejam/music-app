@@ -92,6 +92,11 @@
       font-weight: 100;
     }
 
+    h4 {
+      font-size: 1.6em;
+      font-weight: 100;
+    }
+
     div.presentation-box-1 {
       border-bottom: 1px $accentOrange solid;
       padding: 20px 0;
@@ -105,7 +110,7 @@
         align-items: center;
         flex-direction: column;
         max-width: 300px;
-        max-height: 300px;
+        max-height: 370px;
         padding: 20px;
         // background-color: #b33920;
 
@@ -145,11 +150,6 @@
       //flex-wrap: wrap;
       //height: 500px;
       background-color: $lighterDark;
-
-      h4 {
-        font-size: 1.6em;
-        font-weight: 100;
-      }
 
       div.playlist {
         //width: 500px;
@@ -204,6 +204,44 @@
 
       }
 
+    }
+
+    div.presentation-box-3-title {
+      border-bottom: 1px $accentOrange solid;
+    }
+
+    div.presentation-box-3 {
+      border-bottom: 1px $accentOrange solid;
+      padding: 20px 0;
+      background: $lighterDark;
+      /*display: flex;
+      flex-wrap: wrap;
+      justify-content: center;*/
+
+      div.tags-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: stretch;
+
+        div.tag {
+          height: 36px;
+          max-width: 230px;
+          min-width: 100px;
+          background: wheat;
+          border-radius: 36px;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          margin: 5px;
+          flex-grow: 1;
+          div.tag-circle {
+            background-color: $lighterDark;
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            margin: 13px;
+          }
+        }
+      }
     }
 
     p {

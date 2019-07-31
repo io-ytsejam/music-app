@@ -7,6 +7,23 @@ import {faSlidersH} from "@fortawesome/free-solid-svg-icons/faSlidersH";
 import {faHeadphonesAlt} from "@fortawesome/free-solid-svg-icons/faHeadphonesAlt";
 import {faMusic} from "@fortawesome/free-solid-svg-icons/faMusic";
 import {faStream} from "@fortawesome/free-solid-svg-icons";
+import {faTag} from "@fortawesome/free-solid-svg-icons/faTag";
+
+class Tag extends Component {
+    render() {
+        return (
+            <div
+                className="tag"
+                style={{
+                    width: this.props.width,
+                    flexGrow: this.props.flexGrow
+                }}
+            >
+                <div className="tag-circle"/>
+            </div>
+        );
+    }
+}
 
 class MainPage extends Component {
     constructor(props) {
@@ -17,6 +34,7 @@ class MainPage extends Component {
             keys: 0
         };
 
+        /*<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="tag" class="svg-inline--fa fa-tag fa-w-16 fa-3x " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="wheat" style="transform: rotateZ(-45deg);"><path fill="currentColor" d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></svg>*/
 
         this.baconIpsum = this.baconIpsum.bind(this);
         this.getPics = this.getPics.bind(this);
@@ -189,18 +207,21 @@ class MainPage extends Component {
                     </div>
                     <div className="presentation-box-1">
                         <div className="presentation-card">
+                            <h4>Lorem ipsum</h4>
                             <FontAwesomeIcon color={"#b33920"} icon={faSlidersH} size={"6x"}/>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu tortor massa. Duis ultrices laoreet libero, vel dapibus ante ornare vel. Integer egestas leo id ex rutrum laoreet. Quisque sed vulputate nulla. Sed vitae massa sollicitudin, iaculis metus ornare, accumsan nisi.
                             </p>
                         </div>
                         <div className="presentation-card">
+                            <h4>Dolor sit</h4>
                             <FontAwesomeIcon icon={faHeadphonesAlt} color={"#b33920"} size={"6x"}/>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu tortor massa. Duis ultrices laoreet libero, vel dapibus ante ornare vel. Integer egestas leo id ex rutrum laoreet. Quisque sed vulputate nulla. Sed vitae massa sollicitudin, iaculis metus ornare, accumsan nisi.
                             </p>
                         </div>
                         <div className="presentation-card">
+                            <h4>Amet consectetur</h4>
                             <FontAwesomeIcon icon={faMusic} color={"#b33920"} size={"6x"}/>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu tortor massa. Duis ultrices laoreet libero, vel dapibus ante ornare vel. Integer egestas leo id ex rutrum laoreet. Quisque sed vulputate nulla. Sed vitae massa sollicitudin, iaculis metus ornare, accumsan nisi.
@@ -260,6 +281,18 @@ class MainPage extends Component {
                         </div>
                         </div>
                     </div>
+                        <div className="presentation-box-3-title">
+                            <h3>Minus, vel.</h3>
+                        </div>
+                        <div className="presentation-box-3">
+                            <div className="tags-box">
+                                <Tag flexGrow={9} />
+                                <Tag flexGrow={3} />
+                                <Tag flexGrow={1} />
+                                <Tag flexGrow={7} />
+                                <Tag flexGrow={2} />
+                            </div>
+                        </div>
                 </div>
                 </div>
                 <div className={"container"}>

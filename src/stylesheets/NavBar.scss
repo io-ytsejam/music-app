@@ -86,6 +86,10 @@
     color: wheat;
   }
 
+  input.search-bar:focus {
+    box-shadow: 0px 0px 3px 0px $accentOrange;
+  }
+
   // Navigation sections (3)
 
   div.nav-1-section {
